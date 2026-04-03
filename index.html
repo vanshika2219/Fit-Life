@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Health Assistant</title>
+
+  <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+<header>
+  <h2 class = "logo">FitLife</h2>
+
+  <div class="header-right">
+    <span id="username">👤 Guest</span>
+    <button onclick="setUser()">Login</button>
+    <button onclick="toggleDarkMode()">🌙</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- USER -->
+  <div class="card">
+    <h3>Your Details</h3>
+    <input type="number" id="weight" placeholder="Weight (kg)">
+    <input type="number" id="height" placeholder="Height (cm)">
+    <button onclick="generatePlan()">Generate Plan</button>
+  </div>
+
+  <!-- PLAN -->
+  <div class="card">
+    <h3>Daily Plan</h3>
+    <p><strong>💧 Water:</strong> <span id="waterPlan"></span></p>
+    <p><strong>🏃 Exercise:</strong> <span id="exercisePlan"></span></p>
+    <p><strong>👣 Steps:</strong> <span id="stepsPlan"></span></p>
+    <p><strong>🥗 Diet:</strong></p>
+    <pre id="dietPlan"></pre>
+  </div>
+
+  <!-- TRACK -->
+  <div class="card">
+    <h3>Track Today</h3>
+    <input type="number" id="water" placeholder="Water (L)">
+    <input type="number" id="exercise" placeholder="Exercise (mins)">
+    <input type="number" id="steps" placeholder="Steps">
+    <button onclick="saveData()">Save</button>
+  </div>
+
+</div>
+
+<!-- STATUS -->
+<div class="card full">
+  <h3>Status</h3>
+  <p id="status"></p>
+</div>
+
+<!-- HISTORY -->
+<div class="card full">
+  <h3>Recent History</h3>
+  <table id="historyTable"></table>
+</div>
+
+<footer>
+  <p>Stay Healthy , Stay consistent <br> Built with ❤️ by Vanshika </p>
+</footer>
+
+<script src="script1.js"></script>
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <h3>User Login</h3>
+        <input type="text" id="usernameInput" placeholder="Enter your name">
+        <div class="modal-buttons">
+            <button onclick="handleLogin()" class="btn-primary">Login</button>
+            <button onclick="closeLogin()" class="btn-secondary">Cancel</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
